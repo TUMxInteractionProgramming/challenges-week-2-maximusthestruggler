@@ -11,77 +11,8 @@
     <meta charset="UTF-8">
 
     <!-- #2 #css #elements -->
-    <style>
-        /* #2 #colorful #palette is:
-          * Background: #F5F5F5 (GREY 100)
-          * Primary Text: black
-
-          * Primary color: #3F51B5 (INDIGO)
-          * Primary color_text : white
-          * Accent color: #CDDC39 (LIME)
-          * Accent color_text: black
-          */
-
-        /*global styles */
-
-        * {
-            /* #2 #font #faces */
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            /* #2 #colorful #background */
-            background-color: #F5F5F5;
-        }
-
-        h1 {
-            /* #2 #colourful #app-bar */
-            background-color: #3F51B5;
-            color: white;
-        }
-
-        button {
-            /* #2 #colourful #plusfive */
-            background-color: #CDDC39;
-            color: black;
-            /* #2 #font capital #letters */
-            text-transform: uppercase;
-        }
-
-
-        /*styles for channel area*/
-
-        h2 {
-            /* #2 #colorful #channelandchat */
-            background-color: white;
-        }
-
-        /*styles for chat area*/
-
-        ul {
-            /* #2 #colorful #channelandchat */
-            background-color: white;
-            list-style-type: none;
-        }
-
-        strong {
-            /* #2 #font #locations need an extra element, we'll use strong for w3w locations */
-            text-transform: uppercase;
-            color: black;
-        }
-
-        h3 {
-            /* #2 #font #metadata is now medium */
-            font-size: medium;
-        }
-
-        em {
-            /* #2 #font #remaining overrides the default italic appearance of em elements*/
-            font-size: larger;
-            font-style: normal;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -90,30 +21,32 @@
     <!-- #1 #channels #app-bar -->
     <div>
         <h1>
-            <img src="https://media.giphy.com/media/WnFgXGtZ6USkg/giphy.gif" alt="five guys" style="width:56px; height:56px"> chatter|app
+            <img src="https://media.giphy.com/media/WnFgXGtZ6USkg/giphy.gif" alt="five guys" style="width:56px; height:56px; vertical-align: bottom"> chatter|app
         </h1>
     </div>
 
     <!-- #1 #channels #topics -->
     <div>
         <ul>
-            <li><img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px">#Yummy</li>
-            <li><img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px">#SevenContinents</li>
-            <li><img src="https://i.publiclab.org/system/images/photos/000/001/747/original/thebarnstar.png" alt="five guys" style="width:15px; height:15px">#KillerApp</li>
-            <li><img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px">#FirstPersonOnMars</li>
-            <li><img src="https://i.publiclab.org/system/images/photos/000/001/747/original/thebarnstar.png" alt="five guys" style="width:15px; height:15px">#Octoberfest</li>
+            <li id="chosen">#Yummy<img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px"></li>
+            <li>#SevenContinents<img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px"></li>
+            <li>#KillerApp<img src="https://i.publiclab.org/system/images/photos/000/001/747/original/thebarnstar.png" alt="five guys" style="width:15px; height:15px"></li>
+            <li>#FirstPersonOnMars<img src="https://clipart.info/images/ccovers/1495916691gray-star-png-picture-background-transparent.png" alt="five guys" style="width:15px; height:15px"></li>
+            <li>#Octoberfest<img src="https://i.publiclab.org/system/images/photos/000/001/747/original/thebarnstar.png" alt="five guys" style="width:15px; height:15px"></li>
         </ul>
     </div>
 
     <!-- #1 #channels #buttons -->
-    <div style="background-color: white;">
-        <button>
-            <img src="https://www.freeiconspng.com/uploads/location-icon-png-0.png" alt="five guys" style="width:15px; height:15px">new</button>
-        <button>
+    <div id="tab-bar">
+        <button class="tab-bar" id="selected">
+            <img src="https://www.freeiconspng.com/uploads/location-icon-png-0.png" alt="five guys" style="width:15px; height:15px">
+            <span>new</span></button>
+        <button class="tab-bar">
             <img src="https://www.freeiconspng.com/uploads/location-icon-png-0.png" alt="five guys" style="width:15px; height:15px">            
-            trending</button>
-        <button>
-            <img src="https://www.freeiconspng.com/uploads/location-icon-png-0.png" alt="five guys" style="width:15px; height:15px">favorites</button>
+            <span>trending</span></button>
+        <button class="tab-bar">
+            <img src="https://www.freeiconspng.com/uploads/location-icon-png-0.png" alt="five guys" style="width:15px; height:15px">
+            <span>favorites</span></button>
     </div>
 
     <!-- chat area -->
@@ -123,12 +56,12 @@
             <!-- #1 #chat #location is wrapped in small tag-->
             <small>by
         <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
-        <strong>cheeses.yard.applies</strong>
+        cheeses.yard.applies
     </small>
         </h1>
     </div>
     <!-- #1 #chat #metadata contains location, weekday, day, and time -->
-    <div style="width:80%; background-color:white">
+    <div class="mymsg">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/cheeses.yard.applies" target="_blank"> <strong>cheeses.yard.applies</strong> </a>Wed, June 20th, 13:37
@@ -139,9 +72,11 @@
         <p>What's the place you folks call home?</p>
         <!-- #1 #chat #button subsequent to each message -->
         <button>+5 min.</button>
+        <div class="fix"></div>
     </div>
+
     <!-- #1 #chat #metadata contains location, weekday, day, and time -->
-    <div style="width:80%; background-color:white">
+    <div class="channel">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/truck.cotton.zone" target="_blank">
@@ -155,7 +90,7 @@
         <button>+5 min.</button>
     </div>
     <!-- #1 #chat #metadata contains location, weekday, day, and time -->
-    <div style="width:80%; background-color:white">
+    <div class="channel">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/thus.best.dishes" target="_blank">
@@ -169,7 +104,7 @@
         <button>+5 min.</button>
     </div>
     <!-- #1 #chat #metadata contains location, weekday, day, and time -->
-    <div style="width:80%; background-color:white">
+    <div class="channel">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/driveway.helper.magazine" target="_blank">
@@ -183,8 +118,9 @@
         <!-- #1 #chat #button subsequent to each message -->
         <button>+5 min.</button>
     </div>
+
     <!-- #1 #chat #metadata contains location, weekday, day, and time -->
-    <div style="width:80%; background-color:white">
+    <div class="channel">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/escapes.pitch.saucepan" target="_blank">
@@ -198,7 +134,7 @@
         <button>+5 min.</button>
     </div>
     <!-- #1 #chat #metadata contains location, weekday, day, and time  -->
-    <div style="width:80%; background-color:white">
+    <div class="channel">
         <h3>
             <!-- #2 #font #locations need an extra element, we'll use strong for w3w locations -->
             <a href="https://map.what3words.com/meanings.identity.pays" target="_blank">
